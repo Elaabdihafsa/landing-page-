@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout - SmartAgenda </title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="logo">SmartAgenda <span class="emoji">📔</span></a>
+        <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu">
+          <span class="hamburger"></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="checkout-section">
+      <h1 class="section-title">Checkout</h1>
+      <!-- Order Summary -->
+      <div class="order-summary">
+        <h2>Order Summary</h2>
+        <ul>
+          <li>SmartAgenda 2025 Planner <span>99Dh</span></li>
+        </ul>
+        <div class="order-total">
+          <strong>Total:</strong> <span>99Dh</span>
+        </div>
+      </div>
+
+      <!-- Client Information Section -->
+      <form id="clientInfoForm" class="client-info-form" autocomplete="off">
+        <h2 class="client-info-title">Your Information</h2>
+        <div class="form-group">
+          <label for="clientName">Full Name</label>
+          <input type="text" id="clientName" name="clientName" required>
+          <div class="input-error" id="nameError"></div>
+        </div>
+        <div class="form-group">
+          <label for="clientEmail">Email Address</label>
+          <input type="email" id="clientEmail" name="clientEmail" required>
+          <div class="input-error" id="emailError"></div>
+        </div>
+        <div class="form-group">
+          <label for="clientPhone">Phone Number</label>
+          <input type="tel" id="clientPhone" name="clientPhone" required>
+          <div class="input-error" id="phoneError"></div>
+        </div>
+        <button type="submit" class="btn accent-btn validate-btn">Validate Order</button>
+        <div class="form-message" id="orderMessage"></div>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-social">
+        <a href="#" aria-label="Twitter" class="social-icon"><img src="whtsp.jpg" alt="whatsap"></a>
+        <a href="#" aria-label="Facebook" class="social-icon"><img src="facebook.png" alt="Facebook"></a>
+        <a href="#" aria-label="Instagram" class="social-icon"><img src="insta.png" alt="Instagram"></a>
+      </div>
+      <div class="footer-copy">
+        © 2025 SmartAgenda. All rights reserved.
+      </div>
+    </div>
+  </footer>
+  <script src="scripts.js"></script>
+</body>
+</html>
+
+<style>
+/* Add to style.css for cart/checkout page styles */
+/* filepath: c:\Users\840 G6 New Version\Desktop\projrct1 html\src\style.css */
+
+.checkout-section {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 16px rgba(59,59,152,0.06);
+  margin: 90px auto 2.5rem auto;
+  padding: 2.5rem 1.5rem 2rem 1.5rem;
+  max-width: 480px;
+}
+
+.order-summary {
+  background: var(--bg);
+  border-radius: 1rem;
+  padding: 1.5rem 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 8px rgba(59,59,152,0.04);
+}
+
+.order-summary h2 {
+  font-size: 1.2rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.order-summary ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+.order-summary li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.order-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.client-info-form {
+  background: var(--white);
+  border-radius: 1rem;
+  padding: 2rem 1rem 1.5rem 1rem;
+  box-shadow: 0 1px 8px rgba(59,59,152,0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.client-info-title {
+  font-size: 1.2rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.form-group label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 0.2rem;
+}
+
+.client-info-form input {
+  padding: 0.85em 1.2em;
+  border-radius: 999px;
+  border: 1px solid #e0e0e0;
+  font-size: 1rem;
+  outline: none;
+  transition: border var(--transition);
+  background: var(--bg);
+}
+
+.client-info-form input:focus {
+  border: 1.5px solid var(--accent);
+  background: var(--white);
+}
+
+.input-error {
+  color: #e74c3c;
+  font-size: 0.95em;
+  min-height: 1.2em;
+  margin-top: 0.1em;
+}
+
+.validate-btn {
+  margin-top: 1.2rem;
+}
+
+.form-message {
+  margin-top: 1.2rem;
+  font-size: 1.1rem;
+  color: var(--accent);
+  min-height: 1.2em;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .checkout-section {
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+    border-radius: 1rem;
+    margin: 1.5rem auto;
+  }
+  .order-summary,
+  .client-info-form {
+    padding: 1rem 0.5rem;
+  }
+}
+</style>
+
+<script>
+// Add to scripts.js for client info validation
+// filepath: c:\Users\840 G6 New Version\Desktop\projrct1 html\src\scripts.js
+
+// ====== Client Info Validation for Checkout ======
+const clientInfoForm = document.getElementById('clientInfoForm');
+if (clientInfoForm) {
+  clientInfoForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Get fields
+    const name = clientInfoForm.elements['clientName'].value.trim();
+    const email = clientInfoForm.elements['clientEmail'].value.trim();
+    const phone = clientInfoForm.elements['clientPhone'].value.trim();
+
+    // Error elements
+    const nameError = document.getElementById('nameError');
+    const emailError = document.getElementById('emailError');
+    const phoneError = document.getElementById('phoneError');
+    const orderMessage = document.getElementById('orderMessage');
+
+    // Reset errors
+    nameError.textContent = '';
+    emailError.textContent = '';
+    phoneError.textContent = '';
+    orderMessage.textContent = '';
+
+    let valid = true;
+
+    if (!name) {
+      nameError.textContent = 'Full Name is required.';
+      valid = false;
+    }
+    if (!email) {
+      emailError.textContent = 'Email Address is required.';
+      valid = false;
+    } else if (!/^[^@]+@[^@]+\.[^@]+$/.test(email)) {
+      emailError.textContent = 'Enter a valid email address.';
+      valid = false;
+    }
+    if (!phone) {
+      phoneError.textContent = 'Phone Number is required.';
+      valid = false;
+    }
+
+    if (valid) {
+      orderMessage.style.color = 'var(--accent)';
+      orderMessage.textContent = `Thank you, ${name}! Your order has been validated ✅`;
+      clientInfoForm.reset();
+    }
+  });
+}
+</script>
